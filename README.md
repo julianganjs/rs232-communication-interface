@@ -2,15 +2,15 @@
 This repository contains the VHDL module and testbench codes for an RS232 communication interface. RS232 is a protocol for the interchange of serial binary data between two devices. It is a link used to connect DTE and DCE equipment for serial communication.
 
 ## Code Structure
-- [Rs232Rxd.vhd](): This code contains the RS232 receiver design.
-- [Rs232Txd.vhd](): This code contains the RS232 transmitter design.
-- [RS232.vhd](): This code packs the RS232 receiver and transmitter into a single VHDL design.
-- [TopLevelRS232.vhd](): This code  is the top-level design and includes three components, D4to7, Scan4Digit and RS232, so that it allows in-coming RS232 serial data to be received and displayed on 7-segment LEDs, while the 8-bit parallel data set by eight slide switches can be sent out over the RS232 cable.
-- [D4to7.vhd](): This code converts the received binary code to a 7-segment representation.
-- [scan4Digit.vhd](): This code send the four digits to four 7-segment displays.
-- [tb_Rs232Rxd.vhd](): This code contains the testbench for the RS232 receiver design.
-- [tb_Rs232Txd.vhd](): This code contains the testbench for the RS232 transmitter design.
-- [tb_TopLevelRS232.vhd](): This code contains the testbench for the RS232 top-level design.
+- [Rs232Rxd.vhd](https://github.com/julianganjs/rs232-communication-interface/blob/main/Rs232Rxd.vhd): This code contains the RS232 receiver design.
+- [Rs232Txd.vhd](https://github.com/julianganjs/rs232-communication-interface/blob/main/Rs232Txd.vhd): This code contains the RS232 transmitter design.
+- [RS232.vhd](https://github.com/julianganjs/rs232-communication-interface/blob/main/RS232.vhd): This code packs the RS232 receiver and transmitter into a single VHDL design.
+- [TopLevelRS232.vhd](https://github.com/julianganjs/rs232-communication-interface/blob/main/TopLevelRS232.vhd): This code is the top-level design that allows in-coming RS232 serial data to be received and displayed on 7-segment LEDs, while the 8-bit parallel data set by eight slide switches can be sent out over the RS232 cable.
+- [D4to7.vhd](https://github.com/julianganjs/rs232-communication-interface/blob/main/D4to7.vhd): This code converts the received binary code to a 7-segment representation.
+- [scan4Digit.vhd](https://github.com/julianganjs/rs232-communication-interface/blob/main/scan4Digit.vhd): This code send the four digits to four 7-segment displays.
+- [tb_Rs232Rxd.vhd](https://github.com/julianganjs/rs232-communication-interface/blob/main/tb_Rs232Rxd.vhd): This code contains the testbench for the RS232 receiver design.
+- [tb_Rs232Txd.vhd](https://github.com/julianganjs/rs232-communication-interface/blob/main/tb_Rs232Txd.vhd): This code contains the testbench for the RS232 transmitter design.
+- [tb_TopLevelRS232.vhd](https://github.com/julianganjs/rs232-communication-interface/blob/main/tb_TopLevelRS232.vhd): This code contains the testbench for the RS232 top-level design.
 
 ## Methodology
 - ### Data Transmission
