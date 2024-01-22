@@ -1,6 +1,17 @@
 # RS232 Communication Interface
 This repository contains the VHDL module and testbench codes for an RS232 communication interface. RS232 is a protocol for the interchange of serial binary data between two devices. It is a link used to connect DTE and DCE equipment for serial communication.
 
+## Code Structure
+- [Rs232Rxd.vhd](): This code contains the RS232 receiver design.
+- [Rs232Txd.vhd](): This code contains the RS232 transmitter design.
+- [RS232.vhd](): This code packs the RS232 receiver and transmitter into a single VHDL design.
+- [TopLevelRS232.vhd](): This code  is the top-level design and includes three components, D4to7, Scan4Digit and RS232, so that it allows in-coming RS232 serial data to be received and displayed on 7-segment LEDs, while the 8-bit parallel data set by eight slide switches can be sent out over the RS232 cable.
+- [D4to7.vhd](): This code converts the received binary code to a 7-segment representation.
+- [scan4Digit.vhd](): This code send the four digits to four 7-segment displays.
+- [tb_Rs232Rxd.vhd](): This code contains the testbench for the RS232 receiver design.
+- [tb_Rs232Txd.vhd](): This code contains the testbench for the RS232 transmitter design.
+- [tb_TopLevelRS232.vhd](): This code contains the testbench for the RS232 top-level design.
+
 ## Methodology
 - ### Data Transmission
   The transmission of data is represented by a sequence of voltage levels. The voltage levels are output as either positive or negative, and utilizes a reference point of zero volts. Additionally, an internal clock signal is utilized for the synchronization of timing of which the bits are sent out.
@@ -18,6 +29,5 @@ This repository contains the VHDL module and testbench codes for an RS232 commun
   If “Clock1x” is enabled, the process for storing the bits from “DataIn” and outputting them at “TxD” will begin. During the very first rising edge, the number of bits sent out will still be zero. This is also indicated in the counter “iNoBitsSent” as “0000”. At this stage, the 8-bit vector being received at “DataIn” will be concatenated with a ‘0’ bit at the LSB position for the start bit. This resultant 9-bit vector will be stored inside “iTxdBuffer”. These bits will then be outputted one by one at each clock cycle at the “Txd” port.<br><br>
   When all 9-bits in the data packet have been sent out, including the start bit, the “iNoBitsSent” counter will reach “1001”. At this stage, “iEnableTxdBuffer” will be deasserted and the state for the next clock cycle will be set to “stStop”. After that, the state will change to “stTxdCompleted” and an internal reset signal will be asserted in order to restart the cycle, returning the transmitter back to idle state to wait for the next “Send” signal.
 
-## Code Structure
-
-
+## License
+This project is licensed under the MIT License.
